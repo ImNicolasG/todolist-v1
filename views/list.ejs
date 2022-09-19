@@ -1,0 +1,33 @@
+<%- include("header") -%>
+
+    <div id="heading" class="box">
+        <h1><%= listTitle %></h1>
+    </div>
+
+
+    <div class="box">
+
+        <!-- For loop that appends a new item to the list using 'newListItems' index of 'i' for each added item -->
+        <% for (var i = 0; i < newListItems.length; i++) { %>
+
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= newListItems[i] %> </p>
+            </div>
+            
+        <% } %>
+
+    
+        
+        <!-- 'action' is our root route, where the info gets sent -->
+        <!-- 'method' is what happens on submission. -->
+        <form class="" action="/" method="post">
+            <input type="text" name="newItem" placeholder="Text Box" autocomplete="off">
+            <!-- 'type=submit' triggers the post request -->
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+            
+
+    </div>
+
+<%- include("footer") -%>
